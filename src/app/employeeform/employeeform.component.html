@@ -1,0 +1,55 @@
+<div class="container">
+<div class="row mt-5"  >
+
+<div class="col-4"></div>
+<div class="col-4 mt-5">
+    <div class="card">
+<div class="card-body">
+    <h4 class=" text-center" style="color:rgb(51, 107, 141);"><u> EMPLOYEE FORM</u></h4>
+    <form #employeeform="ngForm" (ngSubmit)="submitdata()" class="mt-3">
+        <div class="mb-3">
+          <input placeholder="Name" type="text" name="empname" [(ngModel)]="Employeeform.empname"
+           #empname="ngModel"
+          [class.is-invalid]="empname.invalid &&(empname.dirty || empname.touched)" required pattern="^[A-Za-z]+$"
+           class="form-control" id="Name" >
+        <small class="text-danger" [class.d-none]="empname.valid&&(empname.dirty || empname.touched)">Please enter valid Name</small>
+        </div>
+        <div class="mb-3">
+          <input placeholder="Designation" name="designation" 
+          [(ngModel)]="Employeeform.designation" #designation="ngModel"
+          [class.is-invalid]="designation.invalid &&(designation.dirty || designation.touched)" required
+           pattern="^[A-Za-z]+$"
+           type="text" class="form-control" id="Designation">
+           <small class="text-danger" [class.d-none]="designation.valid&&(designation.dirty || designation.touched)">
+            Please enter valid Designation</small>
+
+        </div>
+        <div class="mb-3">
+            <input class="Location" name="location" 
+            [(ngModel)]="Employeeform.location"
+             #location="ngModel" placeholder="Location" type="text" 
+             [class.is-invalid]="location.invalid &&(location.dirty || location.touched)" 
+             required pattern="^[A-Za-z]+$"
+             class="form-control" id="Location">
+             <small class="text-danger" [class.d-none]="location.valid&&(location.dirty || location.touched)">Please enter valid Location</small>
+
+          </div>
+          <div class="mb-3">
+            <input class="Salary" name="salary" [(ngModel)]="Employeeform.salary"
+             #salary="ngModel" placeholder="Salary" type="text" 
+             [class.is-invalid]="salary.invalid&&(salary.dirty || salary.touched)" required pattern="^[0-9]+$"
+             class="form-control" id="Salary">
+             <small class="text-danger" [class.d-none]="salary.valid&&(location.dirty || location.touched)">Please enter valid Salary</small>
+
+          </div>
+     
+        <button type="submit"  class="btn btn-primary form-control">Submit</button>
+      </form>
+</div>
+    </div>
+</div>
+<div class="col-4"></div>
+
+</div>
+
+</div>
